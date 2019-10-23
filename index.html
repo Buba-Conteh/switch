@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #dot {
+        width: 15%;
+        height: 3vh;
+        border-radius: 50%;
+        transition: 1000ms;
+
+    }
+
+    .dot-cont {
+        /* height: 3vh; */
+        /* border-radius:30%; */
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border: 2px solid black;
+        transition: 1000ms;
+    }
+</style>
+
+<body>
+    <!-- <h1 class="text-primary text-center">Heading</h1> -->
+    <div class="container-fluid">
+        <nav class="nav bg-secondary">
+            <h2 class="text-light navbar-brand ml-5">Swithch</h2>
+            <!-- <li class="nav-itme">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-itme">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-itme">
+                <a href="#" class="nav-link">Contact</a>
+            </li> -->
+
+        </nav>
+        <div class="col-6 mx-auto">
+            <div class="card my-5">
+                <div class="card-header">
+                    <h2 class="text-warning text-capitalize">switch</h2>
+                </div>
+                <div class="card-body">
+                    <div class="col-4 dot-cont" id="dot-cont">
+                        <div id="dot" class="py-2 bg-dark"></div>
+                    </div>
+                    <div class="col-3">
+                        <p id="state">Off</p>
+                    </div>
+                </div>
+                <div class="card-footer mt-5">
+                    jcc
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+<script>
+
+
+    let dot = document.querySelector("#dot");
+    let dotCont = document.querySelector("#dot-cont");
+    let state = document.querySelector("#state");
+
+    dot.addEventListener('click', function () {
+
+
+// you can use deiifferent conditons to check if it is on or off. am using the background color to check
+        if(dotCont.style.backgroundColor == "green"){
+            dot.style.marginLeft = "-10px";
+            dotCont.style.backgroundColor = "white";
+            state.textContent="Off";
+            return;
+        }
+
+        dotCont.style.backgroundColor = "green";
+        dot.style.marginLeft = "9em";
+        state.textContent="On";
+
+
+
+    })
+
+
+</script>
+
+</html>
